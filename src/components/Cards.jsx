@@ -18,7 +18,7 @@ export default function Cards(){
     return(
         <main className="flex flex-wrap justify-center items-center gap-10 text-center p-1.5 mb-5 mt-5">
             {cards.map((card, i) => (
-                <motion.div key={i} whileHover={{ rotateY: 360, transition: {duration: 0.6 } }} className="border h-[120px] p-1.5 w-[400px] rounded-lg ">
+                <motion.div key={i} whileHover={{ rotateY: 360, transition: {duration: 0.6 } }} className="border border-[#9b18d4] h-[120px] p-1.5 w-[400px] rounded-lg ">
                     <h1>{card.title}</h1>
                     <p>{card.phrase}</p>
                 </motion.div>

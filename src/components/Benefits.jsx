@@ -11,13 +11,13 @@ export default function Benefits(){
     ]
 
     return(
-        <motion.main className="flex flex-wrap">
+        <motion.main className="flex flex-wrap mt-3 mb-10 gap-5 items-center justify-center">
             {benefits.map((benefit, i) => (
-                <div className="w-[300px]" key={i}>
-                    <span>{benefit.icon}</span>
-                    <h1>{benefit.title}</h1>
-                    <p>{benefit.phrase}</p>
-                </div>
+                <motion.div whileHover={{ scale: 1.1 }} className="w-[280px] bg-[#9b18d410] border border-[#9b18d4] rounded-lg p-1.5" key={i}>
+                    <p className="mt-3 mb-3">{benefit.icon}</p>
+                    <h1 className="font-bold text-[16px]">{benefit.title}</h1>
+                    <p className="mb-3 text-[14px]">{benefit.phrase}</p>
+                </motion.div>
             ))}
         </motion.main>
     )

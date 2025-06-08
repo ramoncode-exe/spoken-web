@@ -10,7 +10,6 @@ export default function App() {
       <Header />
       <Home />
       <Benefits />
-      <Cards />
     </div>
   )
 }

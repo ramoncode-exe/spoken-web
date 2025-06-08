@@ -11,7 +11,7 @@ export default function Benefits(){
     ]
 
     return(
-        <motion.main className="flex flex-wrap mt-3 mb-10 gap-5 items-center justify-center">
+        <motion.main initial={{ y: 300, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 4, ease:"easeOut" }} className="flex flex-wrap mt-3 mb-10 gap-5 items-center justify-center font-poppins">
             {benefits.map((benefit, i) => (
                 <motion.div whileHover={{ scale: 1.1 }} className="w-[280px] bg-[#9b18d410] border border-[#9b18d4] rounded-lg p-1.5" key={i}>
                     <p className="mt-3 mb-3">{benefit.icon}</p>

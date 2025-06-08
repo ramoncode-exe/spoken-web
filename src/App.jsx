@@ -1,6 +1,7 @@
 import Header from "./components/Header"
 import Home from "./components/Home"
 import Cards from "./components/Cards"
+import Benefits from "./components/Benefits"
 
 export default function App() {
 
@@ -8,6 +9,7 @@ export default function App() {
     <div>
       <Header />
       <Home />
+      <Benefits />
       <Cards />
     </div>
   )

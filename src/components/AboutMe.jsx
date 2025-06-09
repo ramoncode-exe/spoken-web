@@ -1,5 +1,5 @@
 import { motion } from "framer-motion"
-import BgHome from "../assets/home-bg.svg"
+import BgAboutMe from "../assets/abtme.svg"
 import { Linkedin, Mail, Github } from 'lucide-react';
 
 
@@ -26,7 +26,7 @@ export default function AboutMe(){
          <main className="bg-gradient-to-t from-[#9b18d420]">
             <div className="flex items-center justify-center p-1.5 max-lg:flex-wrap font-poppins">
                 <div>
-                    <img className="max-w-[550px] max-md:max-w-[350px]" src={BgHome} alt="img home" />
+                    <img className="max-w-[550px] max-md:max-w-[350px]" src={BgAboutMe} alt="img home" />
                 </div>
                 {info.map(( info, i ) => (
                     <div className="max-w-[500px] mb-5 mt-5">

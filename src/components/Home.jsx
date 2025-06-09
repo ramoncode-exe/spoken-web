@@ -11,7 +11,7 @@ export default function Home(){
                     <p className="mt-3">Com o Spoken, você vai aprender apenas o essencial. O Spoken foca apenas nas 3000 palavras mais faladas do inglês!</p>
                 </motion.div>
                 <motion.div className="mt-8 mb-8" initial={{ x: +200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2, ease:"easeOut" }}>
-                    <img className="max-w-500" src={BgHome} alt="img home" />
+                    <img className="max-w-[550px] max-md:max-w-[350px]" src={BgHome} alt="img home" />
                 </motion.div>
             </div>
         </main>

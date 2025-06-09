@@ -3,6 +3,7 @@ import Home from "./components/Home"
 import Cards from "./components/Cards"
 import Benefits from "./components/Benefits"
 import AboutSpoken from "./components/AboutSpoken"
+import AboutMe from "./components/AboutMe"
 import Footer from "./components/Footer"
 
 export default function App() {
@@ -14,6 +15,7 @@ export default function App() {
       <Benefits />
       <AboutSpoken />
       <Cards />
+      <AboutMe />
       <Footer />
     </div>
   )

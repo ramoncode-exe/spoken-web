@@ -22,7 +22,7 @@ export default function Cards(){
             </div>
             <div className="flex flex-wrap justify-center items-center mx-auto gap-10 text-center p-1.5 mb-5 mt-5 max-w-[1280px]">
                 {cards.map((card, i) => (
-                    <motion.div style={{ backgroundImage: `url(${card.image})`, transformStyle: "preserve-3d"}}  key={i} whileHover={{ rotateY: 360, transition: {duration: 0.4 } }} className="bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] h-[600px] p-1.5 w-[400px] rounded-lg bg-center bg-cover">
+                    <motion.div style={{ backgroundImage: `url(${card.image})`, transformStyle: "preserve-3d"}}  key={i} whileHover={{ rotateY: 360, transition: {duration: 0.4 } }} className="bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] h-[600px] p-1.5 w-[400px] max-md:w-[300px] max-md:h-[500px] rounded-lg bg-center bg-cover">
                     </motion.div>
                 ))}
                 

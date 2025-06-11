@@ -20,7 +20,7 @@ export default function Cards(){
             <div className="text-center font-bold text-[24px]">
                 <h1>Vamos Começar, <span className="text-[#9b18d4]">Escolha um Tópico!</span></h1>
             </div>
-            <div className="flex flex-wrap justify-center items-center gap-10 text-center p-1.5 mb-5 mt-5">
+            <div className="flex flex-wrap justify-center items-center mx-auto gap-10 text-center p-1.5 mb-5 mt-5 max-w-[1280px]">
                 {cards.map((card, i) => (
                     <motion.div key={i} whileHover={{ rotateY: 360, transition: {duration: 0.3 } }} className="bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] h-[120px] p-1.5 w-[400px] rounded-lg ">
                         <h1>{card.title}</h1>

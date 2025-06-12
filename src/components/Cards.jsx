@@ -1,18 +1,18 @@
 import { motion } from "framer-motion"
-import { i, title } from "framer-motion/client"
+import { Link } from "react-router-dom"
 
 export default function Cards(){
 
     const cards = [
-        {image: "./apresentation.svg"},
-        {image: "./hi-and-bye.svg"},
-        {image: "./routine.svg"},
-        {image: "./eat-out.svg"},
-        {image: "./where-is-it.svg"},
-        {image: "./talking.svg"},
-        {image: "./buy.svg"},
-        {image: "./emergency.svg"},
-        {image: "./travelling.svg"}
+        {id: "1", image: "./apresentation.svg"},
+        {id: "2", image: "./hi-and-bye.svg"},
+        {id: "3", image: "./routine.svg"},
+        {id: "4", image: "./eat-out.svg"},
+        {id: "5", image: "./where-is-it.svg"},
+        {id: "6", image: "./talking.svg"},
+        {id: "7", image: "./buy.svg"},
+        {id: "8", image: "./emergency.svg"},
+        {id: "9", image: "./travelling.svg"}
     ]
 
     return(
@@ -22,8 +22,12 @@ export default function Cards(){
             </div>
             <div className="flex flex-wrap justify-center items-center mx-auto gap-10 text-center p-1.5 mb-5 mt-5 max-w-[1280px]">
                 {cards.map((card, i) => (
-                    <motion.div style={{ backgroundImage: `url(${card.image})`, transformStyle: "preserve-3d"}}  key={i} whileHover={{ rotateY: 360, transition: {duration: 0.4 } }} className="bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] h-[450px] p-1.5 w-[300px] max-md:w-[260px] max-md:h-[420px] rounded-lg bg-center bg-cover">
-                    </motion.div>
+                    <Link to={`/aula/${card.id}`} key={i}>
+                        <motion.div style={{ backgroundImage: `url(${card.image})`, transformStyle: "preserve-3d"}}
+                        whileHover={{ rotateY: 360, transition: {duration: 0.4 } }} 
+                        className="bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] h-[450px] p-1.5 w-[300px] max-md:w-[260px] max-md:h-[420px] rounded-lg bg-center bg-cover">
+                        </motion.div>
+                    </Link>
                 ))}
                 
             </div>  

@@ -23,7 +23,7 @@ export default function AboutMe(){
 
 
     return(
-         <main className="bg-gradient-to-t from-[#9b18d420]">
+         <motion.main initial={{ y: 300, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 8, ease:"easeOut" }} className="bg-gradient-to-t from-[#9b18d420]">
             <div className="flex items-center justify-center p-1.5 max-lg:flex-wrap font-poppins">
                 <div>
                     <img className="max-w-[550px] max-md:max-w-[350px]" src={BgAboutMe} alt="img home" />
@@ -41,6 +41,6 @@ export default function AboutMe(){
                 ))} 
             </div>
             
-         </main>
+         </motion.main>
     )
 }

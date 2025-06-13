@@ -12,10 +12,11 @@ export default function CardsAulas(){
                 <img className="w-[180px]" src={Logo} alt="logo img" />
             </div>
             <div>
-                <div className="bg-gradient-to-r from-[#9b18d420] border border-[#9b18d4] w-[400px] h-[500px] rounded-lg p-1.5 text-center">
+                <div className="bg-gradient-to-r from-[#9b18d420] border border-[#9b18d4] w-[400px] h-[500px] rounded-lg p-1.5 text-center max-md:w-[350px] max-md:h-[450px]">
                     <h1 className="mt-5 mb-2 font-bold">Tópico</h1>
                     <p className="mt-2 mb-2 text-sm">Em último caso: Utilize o ChatGPT ou Google Tradutor para tirar a sua dúvida, caso não consiga responder!</p>
                     <p className="">Questão: Hi</p>
+                    <motion.button whileHover={{ scale: 1.1 }} className="bg-[#d9d9d9] p-2 rounded-3xl border mr-2 text-[#000000] hover:bg-[#1fa745]">Validar Resposta!</motion.button>
                 </div>
             </div> 
         </motion.main>

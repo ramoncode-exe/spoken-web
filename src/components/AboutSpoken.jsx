@@ -1,10 +1,9 @@
-import { easeInOut, motion } from "framer-motion"
 import AbtSpoken from "../assets/abtspoken-bg.svg"
 
 export default function About(){
 
     return(
-        <motion.main initial={{ y: 300, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ duration: 6, ease: "easeInOut"}}>
+        <main>
             <div className="flex items-center justify-center mt-3 gap-5 p-1.5 max-lg:flex-wrap font-poppins">
                 <div>
                     <img className="max-w-[500px] max-md:max-w-[350px]" src={AbtSpoken} alt="About Spoken Img" />
@@ -23,6 +22,6 @@ export default function About(){
                     </div>
                 </div> 
             </div>   
-        </motion.main>
+        </main>
     )
 }

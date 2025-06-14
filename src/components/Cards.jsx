@@ -5,14 +5,11 @@ export default function Cards(){
 
     const cards = [
         {id: "1", image: "./apresentation.svg"},
-        {id: "2", image: "./hi-and-bye.svg"},
-        {id: "3", image: "./routine.svg"},
-        {id: "4", image: "./eat-out.svg"},
-        {id: "5", image: "./where-is-it.svg"},
-        {id: "6", image: "./talking.svg"},
-        {id: "7", image: "./buy.svg"},
-        {id: "8", image: "./emergency.svg"},
-        {id: "9", image: "./travelling.svg"}
+        {id: "2", image: "./routine.svg"},
+        {id: "3", image: "./eat-out.svg"},
+        {id: "4", image: "./talking.svg"},
+        {id: "5", image: "./buy.svg"},
+        {id: "6", image: "./travelling.svg"}
     ]
 
     return(
@@ -25,7 +22,7 @@ export default function Cards(){
                     <Link to={`/aula/${card.id}`} key={i}>
                         <motion.div style={{ backgroundImage: `url(${card.image})`, transformStyle: "preserve-3d"}}
                         whileHover={{ rotateY: 360, transition: {duration: 0.4 } }} 
-                        className="bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] h-[450px] p-1.5 w-[300px] max-md:w-[260px] max-md:h-[420px] rounded-lg bg-center bg-cover">
+                        className="border border-[#9b18d4] h-[450px] p-1.5 w-[300px] max-md:w-[260px] max-md:h-[420px] rounded-lg bg-center bg-cover">
                         </motion.div>
                     </Link>
                 ))}

@@ -13,7 +13,7 @@ export default function Cards(){
     ]
 
     return(
-        <main className="font-poppins mb-5 mt-5">
+        <main className="font-poppins p-2 mb-5 mt-5">
             <div className="text-center font-bold text-[24px]">
                 <h1>Vamos Começar, <span className="text-[#9b18d4]">Escolha um Tópico!</span></h1>
             </div>

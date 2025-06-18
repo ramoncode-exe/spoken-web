@@ -32,9 +32,9 @@ export default function AboutMe(){
                         <h1 className="font-bold text-[24px] mb-5">{info.h1}</h1>
                         <p className="text-[14px]">{info.text}</p>
                         <div className="flex gap-5 mb-3 mt-3">
-                            <span onClick={()=> window.open("https://www.linkedin.com/in/ramonprog/")} ><Linkedin/></span>
-                            <span onClick={()=> window.open("https://github.com/ramoncode-exe")} ><Github/></span>
-                            <span onClick={()=> window.open("https://mail.google.com/mail/")} ><Mail/></span>
+                            <span className="hover:text-[#9b18d4]" onClick={()=> window.open("https://www.linkedin.com/in/ramonprog/")} ><Linkedin/></span>
+                            <span className="hover:text-[#9b18d4]" onClick={()=> window.open("https://github.com/ramoncode-exe")} ><Github/></span>
+                            <span className="hover:text-[#9b18d4]" onClick={()=> window.open("https://mail.google.com/mail/")} ><Mail/></span>
                         </div>
                     </div>
                 ))} 

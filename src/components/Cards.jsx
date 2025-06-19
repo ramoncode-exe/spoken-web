@@ -1,24 +1,16 @@
 import { Link } from "react-router-dom"
 import { motion } from "framer-motion"
+import nameCards from "../content/nameCards"
 
 export default function Cards() {
 
-    const cards = [
-        { id: "meApresentando", image: "./apresentation.svg" },
-        { id: "minhaRotina", image: "./routine.svg" },
-        { id: "comerFora", image: "./eat-out.svg" },
-        { id: "batePapo", image: "./talking.svg" },
-        { id: "Compras", image: "./buy.svg" },
-        { id: "Viajando", image: "./travelling.svg" }
-    ];
-
     return (
-        <main className="font-poppins p-2 mb-5 mt-5 bg-[url(../bg-img.png)] bg-center bg-contain bg-no-repeat">
+        <main className="font-poppins p-2 mb-5 mt-5">
             <div className="text-center font-bold text-[24px]">
                 <h1>Vamos Começar, <span className="text-[#9b18d4]">Escolha um Tópico!</span></h1>
             </div>
             <div className="flex flex-wrap justify-center items-center mx-auto gap-10 text-center p-1.5 mb-5 mt-5 max-w-[1280px]">
-                {cards.map((card, i) => (
+                {nameCards.map((card, i) => (
                     <Link to={`/aula/${card.id}`} key={i}>
                         <motion.div style={{ backgroundImage: `url(${card.image})`, transformStyle: "preserve-3d" }}
                             whileHover={{ rotateY: 360, transition: { duration: 0.4 } }}

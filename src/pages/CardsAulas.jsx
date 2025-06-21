@@ -25,6 +25,7 @@ export default function CardsAulas() {
 
     function speak(text) {
         if ('speechSynthesis' in window) {
+            speechSynthesis.cancel();
             const utterance = new SpeechSynthesisUtterance(text);
 
             const langMap = {
@@ -67,14 +68,27 @@ export default function CardsAulas() {
                 <div className="bg-gradient-to-r from-[#3e1c4c62] border border-[#9b18d4] shadow-xl backdrop-blur-md w-[400px] h-[500px] rounded-lg p-1.5 text-center max-md:w-[350px] max-md:h-[450px]">
                     <h1 className="mt-5 mb-2 font-bold text-[22px] text-[#9b18d4]">{cardData?.title || "Tópico"}</h1>
                     <div className="flex items-center justify-center mt-5">
-                        {spokenContent[id] && spokenContent[content] && (
-                            <p>{spokenContent[id][content].en}</p>
+                        {spokenContent[id]?.[content]?.[idiomaAtual] && (
+                            <>
+                                <motion.p
+                                    key={idiomaAtual + content}
+                                    initial={{ opacity: 0, y: 10 }}
+                                    animate={{ opacity: 1, y: 0 }}
+                                    transition={{ duration: 0.3 }}
+                                    className="text-[16px]"
+                                >
+                                    {spokenContent[id][content][idiomaAtual]}
+                                </motion.p>
+                                <motion.button
+                                    whileHover={{ scale: 1.1 }}
+                                    onClick={() => speak(spokenContent[id][content][idiomaAtual])}
+                                >
+                                    <Mic className="ml-2 font-bold hover:text-[#9b18d4]" />
+                                </motion.button>
+                            </>
                         )}
-                        <p className="text-[16px]">{spokenContent[id][content][idiomaAtual]}</p>
-                        <motion.button whileHover={{ scale: 1.1 }} onClick={() => speak(spokenContent[id][content][idiomaAtual])}>
-                            <Mic className="ml-2 font-bold hover:text-[#9b18d4]" />
-                        </motion.button>
                     </div>
+
 
                     <div className="flex flex-col">
                         <motion.button onClick={() => nextStep()} whileHover={{ scale: 1.1 }} className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-10 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto">Próxima Frase</motion.button>

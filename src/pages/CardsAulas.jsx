@@ -13,6 +13,7 @@ export default function CardsAulas() {
 
     const { id } = useParams()
     const [content, setContent] = useState(0);
+    const [idiomaAtual, setIdiomaAtual] = useState('en');
     const totalContent = spokenContent[id]?.length || 0;
     const cardData = nameCards.find(card => card.id === id);
 
@@ -25,7 +26,14 @@ export default function CardsAulas() {
     function speak(text) {
         if ('speechSynthesis' in window) {
             const utterance = new SpeechSynthesisUtterance(text);
-            utterance.lang = 'en-US';
+
+            const langMap = {
+                en: 'en-US',
+                es: 'es-ES',
+                fr: 'fr-FR'
+            };
+
+            utterance.lang = langMap[idiomaAtual] || 'en-US';
             speechSynthesis.speak(utterance);
         } else {
             alert("Seu navegador não suporta a leitura de voz.");
@@ -39,18 +47,18 @@ export default function CardsAulas() {
             <div className="mt-5 mb-5">
                 <img className="w-[180px]" src={LogoLight} alt="logo img" />
             </div>
-            <div className="mt-5 mb-5"> 
+            <div className="mt-5 mb-5">
                 <h1 className="text-[20px] italic">E aí, qual idioma vai ser hoje?</h1>
             </div>
             <div>
                 <div className="flex mb-3 gap-5">
-                    <motion.div whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
+                    <motion.div onClick={() => setIdiomaAtual('en')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
                         <ReactCountryFlag countryCode="US" />
                     </motion.div>
-                    <motion.div whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
+                    <motion.div onClick={() => setIdiomaAtual('es')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
                         <ReactCountryFlag countryCode="ES" />
                     </motion.div>
-                    <motion.div whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
+                    <motion.div onClick={() => setIdiomaAtual('fr')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
                         <ReactCountryFlag countryCode="FR" />
                     </motion.div>
                 </div>
@@ -62,9 +70,9 @@ export default function CardsAulas() {
                         {spokenContent[id] && spokenContent[content] && (
                             <p>{spokenContent[id][content].en}</p>
                         )}
-                        <p className="text-[16px]">{spokenContent[id][content].en}</p>
-                        <motion.button whileHover={{ scale: 1.1 }} onClick={() => speak(spokenContent[id][content].en)}>
-                           <Mic className="ml-2 font-bold hover:text-[#9b18d4]" /> 
+                        <p className="text-[16px]">{spokenContent[id][content][idiomaAtual]}</p>
+                        <motion.button whileHover={{ scale: 1.1 }} onClick={() => speak(spokenContent[id][content][idiomaAtual])}>
+                            <Mic className="ml-2 font-bold hover:text-[#9b18d4]" />
                         </motion.button>
                     </div>
 

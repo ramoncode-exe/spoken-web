@@ -39,6 +39,9 @@ export default function CardsAulas() {
             <div className="mt-5 mb-5">
                 <img className="w-[180px]" src={LogoLight} alt="logo img" />
             </div>
+            <div className="mt-5 mb-5"> 
+                <h1 className="text-[20px] italic">E aí, qual idioma vai ser hoje?</h1>
+            </div>
             <div>
                 <div className="flex mb-3 gap-5">
                     <motion.div whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">

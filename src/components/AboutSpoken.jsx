@@ -3,7 +3,7 @@ import AbtSpoken from "../assets/abtspoken-bg.svg"
 export default function About(){
 
     return(
-        <main>
+        <main id="aboutspoken">
             <div className="flex items-center justify-center mt-3 gap-5 p-1.5 max-lg:flex-wrap font-poppins">
                 <div>
                     <img className="max-w-[500px] max-md:max-w-[350px]" src={AbtSpoken} alt="About Spoken Img" />

@@ -5,7 +5,7 @@ import nameCards from "../content/nameCards"
 export default function Cards() {
 
     return (
-        <main className="font-poppins p-2 mb-5 mt-5 bg-[url('/bg-cards-desk.svg')] bg-no-repeat bg-center w-full">
+        <main id="cards" className="font-poppins p-2 mb-5 mt-5 bg-[url('/bg-cards-desk.svg')] bg-no-repeat bg-center bg-contain max-lg:bg-[url('/bg-cards-desk-tablet.svg')] max-sm:bg-[url('/bg-cards-desk-mobile.svg')]">
             <div className="text-center font-bold text-[24px]">
                 <h1>Vamos Começar, <span className="text-[#9b18d4]">Escolha um Tópico!</span></h1>
             </div>

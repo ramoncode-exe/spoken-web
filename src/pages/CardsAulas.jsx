@@ -14,8 +14,12 @@ export default function CardsAulas() {
     const { id } = useParams()
     const [content, setContent] = useState(0);
     const [idiomaAtual, setIdiomaAtual] = useState('en');
+    const [quizContent, setQuizContent] = useState('en');
     const totalContent = spokenContent[id]?.length || 0;
     const cardData = nameCards.find(card => card.id === id);
+    const fraseAtual = spokenContent[id]?.[content];
+    const quizAtual = fraseAtual?.quiz;
+
 
     function nextStep() {
         if (content < totalContent - 1) {
@@ -31,8 +35,8 @@ export default function CardsAulas() {
 
 
     function resetLanguage(newLanguage) {
-            setIdiomaAtual(newLanguage);
-            setContent(0);
+        setIdiomaAtual(newLanguage);
+        setContent(0);
     }
 
 
@@ -81,8 +85,8 @@ export default function CardsAulas() {
             </div>
             <div>
                 <div className="bg-gradient-to-r from-[#3e1c4c62] border border-[#9b18d4] shadow-xl backdrop-blur-md w-[400px] h-[500px] rounded-lg p-1.5 text-center max-md:w-[350px] max-md:h-[450px]">
-                    <h1 className="mt-5 mb-2 font-bold text-[22px] text-[#9b18d4]">{cardData?.title || "Tópico"}</h1>
-                    <div className="flex items-center justify-center mt-5">
+                    <h1 className="mt-6 mb-2 font-bold text-[22px] text-[#9b18d4]">{cardData?.title || "Tópico"}</h1>
+                    <div className="flex items-center justify-center mt-6">
                         {spokenContent[id]?.[content]?.[idiomaAtual] && (
                             <>
                                 <motion.p
@@ -100,10 +104,22 @@ export default function CardsAulas() {
                                 >
                                     <Mic className="ml-2 font-bold hover:text-[#9b18d4]" />
                                 </motion.button>
+
+
                             </>
                         )}
                     </div>
-
+                    <div className="mt-6">
+                        {quizAtual && (
+                            <div className="flex flex-col">
+                                {quizAtual.map((alternativa, index) => (
+                                    <button className="text-[14px] mt-2 bg-[#00000052] border-[#9c18d479] border w-[320px] mx-auto hover:bg-[#18d41b7f] p-2 rounded-lg" key={index}>
+                                        {alternativa.pt}
+                                    </button>
+                                ))}
+                            </div>
+                        )}
+                    </div>
 
                     <div className="flex flex-col">
                         <motion.button onClick={() => backStep()} whileHover={{ scale: 1.1 }} className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-10 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto">Voltar Frase</motion.button>

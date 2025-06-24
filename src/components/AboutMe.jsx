@@ -8,13 +8,13 @@ export default function AboutMe(){
     {
         text: (
         <>
-            O <span className="font-bold">Spoken</span> é um projeto criado por <span className="text-[#9b18d4] font-semibold">Ramon Patrick, um jovem brasileiro de 20 anos. Ao imigrar sozinho para a Europa,</span> ele percebeu a dificuldade que muitos enfrentam para aprender inglês sem recursos. Autodidata, aprendeu a programar por conta própria e usou esse conhecimento para criar o <span className="text-[#9b18d4] font-semibold">Spoken</span> — uma aplicação web gratuita, feita para ajudar jovens do mundo todo a aprender inglês de forma rápida e acessível.
+            O <span className="font-bold">Spoken</span> é um projeto criado por <span className="text-[#9b18d4] font-semibold">Ramon Patrick, um jovem brasileiro de 20 anos. Ao imigrar sozinho para a Europa,</span> ele percebeu a dificuldade que muitos enfrentam para aprender idiomas sem recursos. Autodidata, aprendeu a programar por conta própria e usou esse conhecimento para criar o <span className="text-[#9b18d4] font-semibold">Spoken</span> — uma aplicação web gratuita, feita para ajudar jovens do mundo todo a aprender idiomas de forma rápida e acessível.
         </>
         ),
 
         h1: (
             <>
-                Um Jovem <span className="text-[#9b18d4]">Sonhador!</span>
+                Eu Quero <span className="text-[#9b18d4]">Ajudar Você!</span>
             </>
         ),
     },

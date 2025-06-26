@@ -78,7 +78,7 @@ export default function Cards() {
                     <Link to={`/aula/${card.id}`} key={i}>
                         <motion.div
                             style={{ backgroundImage: `url(${card.image})` }}
-                            className="border border-[#9b18d4] h-[400px] p-1.5 w-[250px] max-md:w-[230px] max-md:h-[380px] rounded-lg bg-center bg-cover flex-shrink-0"
+                            className="border border-[#9b18d4] h-[430px] p-1.5 w-[280px] max-md:w-[230px] max-md:h-[380px] rounded-lg bg-center bg-cover flex-shrink-0"
                         ></motion.div>
                     </Link>
                 ))}

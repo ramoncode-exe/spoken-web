@@ -1,4 +1,5 @@
 import { motion, scale } from "framer-motion"
+import MenuBar from "../assets/menubar.svg"
 import Logo from "../assets/logo.svg"
 
 export default function Header(){
@@ -6,7 +7,10 @@ export default function Header(){
     return(
         <nav className="p-1.5 flex items-center justify-evenly border-b border-[#d0d0d0] font-poppins">
             <motion.div initial={{ x: -200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2, ease:"easeOut" }} >
-                <img className="w-[180px]" src={Logo} alt="logo spoken" />
+                <img className="w-[150px]" src={Logo} alt="logo spoken" />
+            </motion.div>
+            <motion.div className="md:hidden" initial={{ x: 200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2, ease:"easeOut" }}>
+                <img className="w-[30px]" src={MenuBar} alt="menu responsive bar" />
             </motion.div>
             <motion.div className="max-md:hidden" initial={{ x: +200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2, ease:"easeOut" }} >
                 <ul className="flex gap-5 items-center text-sm">

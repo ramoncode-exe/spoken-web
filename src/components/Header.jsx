@@ -16,8 +16,8 @@ export default function Header(){
                 </ul>
             </motion.div>
             <motion.div className="max-md:hidden text-sm" initial={{ x: +200, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ duration: 2, ease:"easeOut" }}>
-                <a href="#cards"><motion.button whileHover={{ scale: 1.1 }} className="p-2 rounded-3xl border border-[#9b18d4] mr-2 text-[#9b18d4] hover:bg-[#9b18d4] hover:text-[#fff]">Aprender</motion.button></a>
-                <motion.button onClick={()=> window.open("https://www.youtube.com/@ramonaqui")} whileHover={{ scale: 1.1 }} className="bg-[#9b18d4] p-2 rounded-3xl border text-[#FFFFFF] hover:bg-[#521689]">Meu Canal</motion.button>
+                <a href="#cards"><motion.button whileHover={{ scale: 1.1 }} className="p-2 rounded-3xl border border-[#6c47ec] mr-2 text-[#6c47ec] hover:bg-[#6c47ec] hover:text-[#fff]">Aprender</motion.button></a>
+                <motion.button onClick={()=> window.open("https://www.youtube.com/@ramonaqui")} whileHover={{ scale: 1.1 }} className="bg-[#6c47ec] p-2 rounded-3xl border text-[#FFFFFF] hover:bg-[#5131c4]">Meu Canal</motion.button>
             </motion.div>
         </nav>
     )

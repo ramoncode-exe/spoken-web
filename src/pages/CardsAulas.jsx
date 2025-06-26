@@ -82,18 +82,18 @@ export default function CardsAulas() {
                 <h1 className="text-[20px] italic">E aí, qual idioma vai ser hoje?</h1>
             </div>
             <div className="flex mb-3 gap-5">
-                <motion.div onClick={() => resetLanguage('en')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
+                <motion.div onClick={() => resetLanguage('en')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#5932c1] rounded-lg">
                     <ReactCountryFlag countryCode="US" />
                 </motion.div>
-                <motion.div onClick={() => resetLanguage('es')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
+                <motion.div onClick={() => resetLanguage('es')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#5932c1] rounded-lg">
                     <ReactCountryFlag countryCode="ES" />
                 </motion.div>
-                <motion.div onClick={() => resetLanguage('fr')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#9b18d4] rounded-lg">
+                <motion.div onClick={() => resetLanguage('fr')} whileHover={{ scale: 1.1 }} className="border p-1 bg-gradient-to-r from-[#3e1c4c62] border-[#5932c1] rounded-lg">
                     <ReactCountryFlag countryCode="FR" />
                 </motion.div>
             </div>
-            <div className="bg-gradient-to-r from-[#3e1c4c62] border border-[#9b18d4] shadow-xl backdrop-blur-md w-[400px] h-[600px] rounded-lg p-1.5 text-center max-md:w-[400px] max-md:h-[580px]">
-                <h1 className="mt-6 mb-2 font-bold text-[22px] text-[#9b18d4]">{cardData?.title || "Tópico"}</h1>
+            <div className="bg-gradient-to-r from-[#3e1c4c62] border border-[#5932c1] shadow-xl backdrop-blur-md w-[400px] h-[600px] rounded-lg p-1.5 text-center max-md:w-[400px] max-md:h-[580px]">
+                <h1 className="mt-6 mb-2 font-bold text-[22px] text-[#5932c1]">{cardData?.title || "Tópico"}</h1>
                 <div className="flex items-center justify-center mt-6">
                     {spokenContent[id]?.[content]?.[idiomaAtual] && (
                         <>
@@ -110,7 +110,7 @@ export default function CardsAulas() {
                                 whileHover={{ scale: 1.1 }}
                                 onClick={() => speak(spokenContent[id][content][idiomaAtual])}
                             >
-                                <Mic className="ml-2 font-bold hover:text-[#9b18d4]" />
+                                <Mic className="ml-2 font-bold hover:text-[#5932c1]" />
                             </motion.button>
                         </>
                     )}
@@ -137,7 +137,7 @@ export default function CardsAulas() {
                                     <button
                                         key={index}
                                         onClick={() => verificarResposta(index)}
-                                        className={`text-[14px] mt-2 border-[#9c18d479] border w-[320px] mx-auto p-2 rounded-lg ${bgColor}`}
+                                        className={`text-[14px] mt-2 border-[#5932c179] border w-[320px] mx-auto p-2 rounded-lg ${bgColor}`}
                                         disabled={respostaSelecionada !== null}
                                     >
                                         {alternativa.pt}
@@ -152,7 +152,7 @@ export default function CardsAulas() {
                     <motion.button
                         onClick={resetCurrentQuestion}
                         whileHover={{ scale: 1.1 }}
-                        className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-10 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto"
+                        className="bg-[#00000052] p-2 border-[#5932c1] rounded-3xl border mt-10 text-[#fff] hover:bg-[#5932c1] hover:text-[#fff] w-[200px] mx-auto"
                     >
                         Tentar Novamente
                     </motion.button>
@@ -160,7 +160,7 @@ export default function CardsAulas() {
                     <motion.button
                         onClick={() => backStep()}
                         whileHover={{ scale: 1.1 }}
-                        className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-3 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto"
+                        className="bg-[#00000052] p-2 border-[#5932c1] rounded-3xl border mt-3 text-[#fff] hover:bg-[#5932c1] hover:text-[#fff] w-[200px] mx-auto"
                     >
                         Voltar Frase
                     </motion.button>
@@ -169,7 +169,7 @@ export default function CardsAulas() {
                         <motion.button
                             onClick={() => nextStep()}
                             whileHover={{ scale: 1.1 }}
-                            className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-3 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto"
+                            className="bg-[#00000052] p-2 border-[#5932c1] rounded-3xl border mt-3 text-[#fff] hover:bg-[#5932c1] hover:text-[#fff] w-[200px] mx-auto"
                         >
                             Próxima Frase
                         </motion.button>
@@ -181,13 +181,13 @@ export default function CardsAulas() {
 
             <Link to={`/`}>
                 <div className="mb-10">
-                    <motion.button whileHover={{ scale: 1.1 }} className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-10 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto">
+                    <motion.button whileHover={{ scale: 1.1 }} className="bg-[#00000052] p-2 border-[#5932c1] rounded-3xl border mt-10 text-[#fff] hover:bg-[#5932c1] hover:text-[#fff] w-[200px] mx-auto">
                         Voltar ao Início
                     </motion.button>
                 </div>
             </Link>
 
-            <footer className="bg-[#9b18d4] w-full p-3 text-center font-poppins">
+            <footer className="bg-[#5932c1] w-full p-3 text-center font-poppins">
                 <p className="text-[#fff] text-[14px]">Todos os direitos reservados. Spoken Inc. 2025.</p>
             </footer>
         </motion.main>

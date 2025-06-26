@@ -9,14 +9,14 @@ export default function About() {
                     <img className="max-w-[500px] max-md:max-w-[350px]" src={AbtSpoken} alt="About Spoken Img" />
                 </div>
                 <div className="max-w-[500px] mb-10">
-                    <h1 className="text-[24px] font-bold mb-3"><span className="text-[#9b18d4]">Idiomas para Todos,</span> Sem Barreiras</h1>
+                    <h1 className="text-[24px] font-bold mb-3"><span className="text-[#5932c1]">Idiomas para Todos,</span> Sem Barreiras</h1>
                     <p className="leading-7 text-[14px]">O Spoken foi criado com um propósito claro: ajudar você a aprender idiomas de forma rápida, simples e gratuita.
                         A plataforma é acessível para pessoas de qualquer lugar do mundo. Não importa sua origem ou condição financeira. O objetivo do Spoken é um só: ajudar!</p>
                     <div className="flex flex-wrap gap-5 mt-5 text-center items-center justify-center">
-                        <div className="w-[200px] bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] rounded-lg p-1.5" >
+                        <div className="w-[200px] bg-[#5932c1] text-[#fff] rounded-2xl p-5 flex flex-col items-center text-center shadow-md" >
                             <p className="text-[14px]"><span className="text-[18px] font-bold">500+ </span><br />Usuários</p>
                         </div>
-                        <div className="w-[200px] bg-gradient-to-t from-[#9b18d420] border border-[#9b18d4] rounded-lg p-1.5" >
+                        <div className="w-[200px] bg-[#5932c1] text-[#fff] rounded-2xl p-5 flex flex-col items-center text-center shadow-md" >
                             <p className="text-[14px]"><span className="text-[18px] font-bold">80+ </span><br />Lições</p>
                         </div>
                     </div>

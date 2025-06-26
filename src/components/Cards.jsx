@@ -63,9 +63,9 @@ export default function Cards() {
     }, [totalPaginas])
 
     return (
-        <main id="cards" className="font-poppins p-2">
+        <main id="cards" className="font-poppins p-2 mt-5 mb-10 hidden">
             <div className="text-center font-bold text-[24px] mt-5">
-                <h1>Vamos Começar, <span className="text-[#9b18d4]">Escolha um Tópico!</span></h1>
+                <h1>Vamos Começar, <span className="text-[#5932c1]">Escolha um Tópico!</span></h1>
             </div>
 
             <div
@@ -77,7 +77,7 @@ export default function Cards() {
                     <Link to={`/aula/${card.id}`} key={i}>
                         <motion.div
                             style={{ backgroundImage: `url(${card.image})` }}
-                            className="border border-[#9b18d4] h-[430px] p-1.5 w-[280px] max-md:w-[230px] max-md:h-[380px] rounded-lg bg-center bg-cover flex-shrink-0"
+                            className="border border-[#5932c1] h-[430px] p-1.5 w-[280px] max-md:w-[230px] max-md:h-[380px] rounded-lg bg-center bg-cover flex-shrink-0"
                         ></motion.div>
                     </Link>
                 ))}

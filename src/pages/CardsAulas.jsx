@@ -1,45 +1,47 @@
-import { useParams } from "react-router-dom"
-import { useState } from "react"
-import LogoLight from "../assets/logo-light.svg"
-import { motion } from "framer-motion"
-import { Link } from "react-router-dom"
-import spokenContent from "../content/contentCards"
-import nameCards from "../content/nameCards"
+import { useParams } from "react-router-dom";
+import { useState } from "react";
+import LogoLight from "../assets/logo-light.svg";
+import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
+import spokenContent from "../content/contentCards";
+import nameCards from "../content/nameCards";
 import { Mic } from 'lucide-react';
 import ReactCountryFlag from "react-country-flag";
 
-
 export default function CardsAulas() {
-
-    const { id } = useParams()
+    const { id } = useParams();
     const [content, setContent] = useState(0);
     const [idiomaAtual, setIdiomaAtual] = useState('en');
-    const [quizContent, setQuizContent] = useState('en');
+    const [respostaSelecionada, setRespostaSelecionada] = useState(null);
+    const [respostaCorreta, setRespostaCorreta] = useState(null);
+
     const totalContent = spokenContent[id]?.length || 0;
     const cardData = nameCards.find(card => card.id === id);
     const fraseAtual = spokenContent[id]?.[content];
     const quizAtual = fraseAtual?.quiz;
 
-
     function nextStep() {
         if (content < totalContent - 1) {
             setContent(content + 1);
+            setRespostaSelecionada(null);
+            setRespostaCorreta(null);
         }
     }
 
     function backStep() {
         if (content > 0) {
             setContent(content - 1);
+            setRespostaSelecionada(null);
+            setRespostaCorreta(null);
         }
     }
-
 
     function resetLanguage(newLanguage) {
         setIdiomaAtual(newLanguage);
         setContent(0);
+        setRespostaSelecionada(null);
+        setRespostaCorreta(null);
     }
-
-
 
     function speak(text) {
         if ('speechSynthesis' in window) {
@@ -60,7 +62,11 @@ export default function CardsAulas() {
         }
     }
 
-
+    function verificarResposta(index) {
+        const correta = quizAtual[index].correct;
+        setRespostaSelecionada(index);
+        setRespostaCorreta(correta);  // Corrigido aqui!
+    }
 
     return (
         <motion.main className="flex items-center text-[#fff] justify-center flex-col font-poppins bg-[url('/bg-spoken-class.svg')] bg-no-repeat bg-center w-full" initial={{ opacity: 0, x: 50 }} animate={{ opacity: 1, x: 0 }} exit={{ opacity: 0, x: -50 }} transition={{ duration: 1 }}>
@@ -104,26 +110,61 @@ export default function CardsAulas() {
                                 >
                                     <Mic className="ml-2 font-bold hover:text-[#9b18d4]" />
                                 </motion.button>
-
-
                             </>
                         )}
                     </div>
                     <div className="mt-6">
                         {quizAtual && (
                             <div className="flex flex-col">
-                                {quizAtual.map((alternativa, index) => (
-                                    <button className="text-[14px] mt-2 bg-[#00000052] border-[#9c18d479] border w-[320px] mx-auto hover:bg-[#18d41b7f] p-2 rounded-lg" key={index}>
-                                        {alternativa.pt}
-                                    </button>
-                                ))}
+                                {quizAtual.map((alternativa, index) => {
+                                    const isSelected = respostaSelecionada === index;
+                                    const isCorrect = alternativa.correct;
+
+                                    let bgColor = "bg-[#00000052] hover:bg-[#18d41b7f]";
+                                    if (respostaSelecionada !== null) {
+                                        if (isSelected && isCorrect) {
+                                            bgColor = "bg-green-500";
+                                        } else if (isSelected && !isCorrect) {
+                                            bgColor = "bg-red-500";
+                                        } else if (isCorrect) {
+                                            bgColor = "bg-green-300";
+                                        }
+                                    }
+
+                                    return (
+                                        <button
+                                            key={index}
+                                            onClick={() => verificarResposta(index)}
+                                            className={`text-[14px] mt-2 border-[#9c18d479] border w-[320px] mx-auto p-2 rounded-lg ${bgColor}`}
+                                            disabled={respostaSelecionada !== null}
+                                        >
+                                            {alternativa.pt}
+                                        </button>
+                                    );
+                                })}
                             </div>
                         )}
                     </div>
 
                     <div className="flex flex-col">
-                        <motion.button onClick={() => backStep()} whileHover={{ scale: 1.1 }} className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-10 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto">Voltar Frase</motion.button>
-                        <motion.button onClick={() => nextStep()} whileHover={{ scale: 1.1 }} className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-3 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto">Próxima Frase</motion.button>
+                        <motion.button
+                            onClick={() => backStep()}
+                            whileHover={{ scale: 1.1 }}
+                            className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-10 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto"
+                        >
+                            Voltar Frase
+                        </motion.button>
+
+                        {respostaCorreta && (
+                            <motion.button
+                                onClick={() => nextStep()}
+                                whileHover={{ scale: 1.1 }}
+                                className="bg-[#00000052] p-2 border-[#9b18d4] rounded-3xl border mt-3 text-[#fff] hover:bg-[#9b18d4] hover:text-[#fff] w-[200px] mx-auto"
+                            >
+                                Próxima Frase
+                            </motion.button>
+                        )}
+
                         <p className="mt-2 mb-2 text-[10px] italic">Tem alguma dúvida: Clique no nosso ajudante!</p>
                     </div>
 
@@ -140,6 +181,5 @@ export default function CardsAulas() {
                 </div>
             </footer>
         </motion.main>
-
-    )
+    );
 }

@@ -50,7 +50,6 @@ export default function Cards() {
         })
     }
 
-    // Carrossel infinito automático
     useEffect(() => {
         const interval = setInterval(() => {
             setPaginaAtual((prev) => {
@@ -58,7 +57,7 @@ export default function Cards() {
                 irParaPagina(next)
                 return next
             })
-        }, 5000) // muda de página a cada 5s
+        }, 5000) 
 
         return () => clearInterval(interval)
     }, [totalPaginas])

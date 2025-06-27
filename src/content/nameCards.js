@@ -1,10 +1,10 @@
 const nameCards = [
-    { id: "meApresentando", image: "./apresentation.svg", title: "Me Apresentando" },
-    { id: "minhaRotina", image: "./routine.svg", title: "Minha Rotina" },
-    { id: "comerFora", image: "./eat-out.svg", title: "Comer Fora" },
-    { id: "batePapo", image: "./talking.svg", title: "Bate Papo" },
-    { id: "Compras", image: "./buy.svg", title: "Compras" },
-    { id: "Viajando", image: "./travelling.svg", title: "Viajando" }
+    { id: "meApresentando", image: "./1.svg", title: "Me Apresentando" },
+    { id: "minhaRotina", image: "./2.svg", title: "Minha Rotina" },
+    { id: "comerFora", image: "./3.svg", title: "Comer Fora" },
+    { id: "batePapo", image: "./4.svg", title: "Bate Papo" },
+    { id: "Compras", image: "./5.svg", title: "Compras" },
+    { id: "Viajando", image: "./6.svg", title: "Viajando" }
 ];
 
 export default nameCards;

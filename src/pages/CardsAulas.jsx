@@ -93,7 +93,7 @@ export default function CardsAulas() {
                 </motion.div>
             </div>
             <div className="bg-gradient-to-r from-[#3e1c4c62] border border-[#5932c1] shadow-xl backdrop-blur-md w-[400px] h-[600px] rounded-lg p-1.5 text-center max-md:w-[400px] max-md:h-[580px]">
-                <h1 className="mt-6 mb-2 font-bold text-[22px] text-[#5932c1]">{cardData?.title || "Tópico"}</h1>
+                <h1 className="mt-6 mb-2 font-bold text-[22px] text-[#fff]">{cardData?.title || "Tópico"}</h1>
                 <div className="flex items-center justify-center mt-6">
                     {spokenContent[id]?.[content]?.[idiomaAtual] && (
                         <>

@@ -19,7 +19,7 @@ export default function Cards() {
                                 backgroundImage: `url(${card.image})`
                             }}
                             whileHover={{ scale: 1.1 }}
-                            className="h-[300px] p-1.5 w-[450px] max-md:w-[320px] max-md:h-[250px] rounded-lg bg-center bg-cover shadow-md"
+                            className="h-[300px] p-1.5 w-[450px] max-md:w-[320px] max-md:h-[250px] rounded-2xl bg-center bg-cover shadow-md"
                         />
                     </Link>
                 ))}
@@ -27,3 +27,5 @@ export default function Cards() {
         </main>
     )
 }
+
+

@@ -5,13 +5,13 @@ import nameCards from "../content/nameCards"
 export default function Cards() {
     return (
         <main id="cards" className="font-poppins p-2">
-            <div className="text-center font-bold text-[24px] mt-5">
+            <div className="text-center font-bold text-[24px] mt-8">
                 <h1>
                     Vamos Começar, <span className="text-[#7956e7]">Escolha um Tópico!</span>
                 </h1>
             </div>
 
-            <div className="flex flex-wrap justify-center items-center mx-auto gap-10 text-center p-1.5 mb-5 mt-5 max-w-[1280px]">
+            <div className="flex flex-wrap justify-center items-center mx-auto gap-10 text-center p-1.5 mb-8 mt-5 max-w-[1280px]">
                 {nameCards.map((card, i) => (
                     <Link to={`/aula/${card.id}`} key={i}>
                         <motion.div

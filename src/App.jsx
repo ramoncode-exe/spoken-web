@@ -8,6 +8,7 @@ import AboutSpoken from "./components/AboutSpoken"
 import AboutMe from "./components/AboutMe"
 import Footer from "./components/Footer"
 import CardsAulas from "./pages/CardsAulas"
+import Video from "./components/Video"
 
 function AnimatedRoutes() {
   const location = useLocation()
@@ -23,6 +24,7 @@ function AnimatedRoutes() {
               <Home />
               <Benefits />
               <AboutSpoken />
+              <Video />
               <Cards />
               <AboutMe />
               <Footer />

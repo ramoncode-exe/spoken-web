@@ -91,7 +91,7 @@ export default function Header() {
           initial={{ y: -20, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.3 }}
-          className="absolute top-16 left-0 w-full bg-white flex flex-col items-center gap-4 p-4 md:hidden shadow-lg z-10 border-b border-[#d0d0d0]"
+          className="absolute top-[85px] left-0 w-full bg-white flex flex-col items-center gap-4 p-4 md:hidden shadow-lg z-10 border-b border-[#d0d0d0]"
         >
           {[
             { id: "home", text: "Começar" },

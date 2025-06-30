@@ -22,7 +22,7 @@ export default function AboutMe(){
 
 
     return(
-         <main id="aboutme" className="bg-[#5932c1] rounded-t-[100px] text-[#fff] mt-5">
+         <main id="aboutme" className="bg-[#5932c1] text-[#fff] mt-5">
             <div className="flex items-center justify-center p-1.5 max-lg:flex-wrap font-poppins">
                 <div>
                     <img className="max-w-[550px] max-md:max-w-[350px]" src={BgAboutMe} alt="img home" />

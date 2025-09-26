@@ -12,7 +12,7 @@ export default function About() {
                     </div>
                 </div>
 
-                <div className="text-center md:text-left">
+                <div>
                     <span className="text-[#00B4D8] font-bold">VAMOS COMEÇAR</span>
                     <h2 className="text-2xl md:text-3xl font-extrabold text-gray-900 mt-2">Idiomas para todos, <span className="text-[#00B4D8]">sem barreiras</span></h2>
                     <p className="mt-4 text-gray-600 max-w-xl">O Spooken foi criado com um propósito claro: ajudar você a aprender idiomas de forma rápida, simples e gratuita. A plataforma é acessível para pessoas de qualquer lugar do mundo, independente da origem ou condição financeira. Nosso objetivo é um só: tornar o aprendizado acessível.</p>

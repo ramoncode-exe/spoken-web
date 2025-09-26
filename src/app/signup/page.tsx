@@ -27,7 +27,7 @@ export default function SignUpPage() {
                     </div>
                 </form>
             </div>
-            <div className="mt-6 md:mt-0 max-w-xl md:ml-8 text-center md:text-left">
+            <div className="mt-6 md:mt-0 max-w-xl md:ml-8">
                 <span className="text-[#5a33c2] font-bold">INSCREVA-SE</span>
                 <h1 className="mt-2 text-2xl md:text-3xl font-bold">Comece sua jornada com o Spooken!</h1>
                 <p className="mt-2 text-sm md:text-base text-[#444] max-w-md md:w-[480px]">Crie sua conta gratuita e mergulhe no mundo dos idiomas! Com o Spooken, você aprende de forma prática e divertida, revisando palavras importantes, acompanhando seu progresso e participando de lições interativas pensadas para acelerar seu aprendizado.</p>

@@ -41,7 +41,7 @@ export default function LoginPage() {
                     </div>
                 </form>
             </div>
-            <div className="mt-6 md:mt-0 max-w-xl md:ml-8 text-center md:text-left">
+            <div className="mt-6 md:mt-0 max-w-xl md:ml-8">
                 <span className="text-[#5a33c2] font-bold">VAMOS COMEÇAR</span>
                 <h1 className="mt-2 font-bold text-2xl md:text-3xl">Bem-vindo de volta ao Spooken!</h1>
                 <p className="mt-2 text-sm md:text-base text-[#444] max-w-md md:w-[480px]">É ótimo te ver novamente! Faça login para continuar sua jornada de aprendizado de idiomas de forma gratuita e divertida. Acesse suas lições, reveja palavras novas, acompanhe seu progresso e mantenha a consistência nos estudos.</p>

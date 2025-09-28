@@ -1,7 +1,5 @@
 "use client"
-
-import React, { useState } from "react";
-import { Bolt, Book, Clock, CheckCircle, Globe, LifeBuoy, User } from 'lucide-react';
+import { Bolt, Book, Clock, CheckCircle } from 'lucide-react';
 
 export default function DashboardPage() {
 

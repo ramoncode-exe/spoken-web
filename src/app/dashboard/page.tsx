@@ -1,5 +1,6 @@
 "use client"
 import { Bolt, Book, Clock, CheckCircle } from 'lucide-react';
+import React from 'react';
 
 export default function DashboardPage() {
 

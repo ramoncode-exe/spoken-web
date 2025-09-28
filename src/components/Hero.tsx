@@ -24,7 +24,7 @@ export default function Hero() {
                     </div>
                 </div>
                 <div className="flex mt-4 gap-2">
-                    <Link href="/signup">
+                    <Link href="/dashboard">
                         <button className="bg-[#00B4D8] text-white transform hover:-translate-y-1 transition hover:text-[#00B4D8] px-4 py-2 rounded-full border mr-2 font-bold hover:bg-white hover:border-[#00B4D8]">Cadastra-se</button>
                     </Link>
                     <Link href="/signup">

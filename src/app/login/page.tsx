@@ -25,7 +25,7 @@ export default function LoginPage() {
                                 </label>
                             </div>
                             <div>
-                                <Link className="hover:underline text-sm" href="">Esqueceu sua senha?</Link>
+                                <Link className="hover:underline text-sm" href="/reset-password">Esqueceu sua senha?</Link>
                             </div>
                         </div>
                     </div>

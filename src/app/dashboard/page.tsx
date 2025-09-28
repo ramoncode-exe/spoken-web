@@ -56,12 +56,12 @@ export default function DashboardPage() {
 
                         <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow">
                             <h3 className="font-semibold">Próximos Idiomas</h3>
-                            <p className="text-sm text-gray-400 mt-2">Inglês, Espanhol</p>
+                            <p className="text-sm text-gray-400 mt-2">Inglês Espanhol</p>
                         </div>
 
                         <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow">
                             <h3 className="font-semibold">Novidades</h3>
-                            <p className="text-sm text-gray-400 mt-2">Nova lição disponível: 'Conversação'</p>
+                            <p className="text-sm text-gray-400 mt-2">Nova lição disponível</p>
                         </div>
 
                         <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow">

@@ -1,11 +1,49 @@
 "use client"
-import { Bolt, Book, Clock, CheckCircle } from 'lucide-react';
+
+import { Bolt, Book, Clock, CheckCircle, Phone, MapPin, Mail, Flag } from 'lucide-react';
 import React from 'react';
+import Link from 'next/link';
+import Image from 'next/image';
+import FlagGermany from "../../assets/germany.svg"
+import FlagItaly from "../../assets/italy.svg"
 
 export default function DashboardPage() {
 
+    const options = [
+        {
+            title: "Em andamento",
+            text: "2 lições ativas"
+        },
+        {
+            title: "Próximos Idiomas",
+            imgGermany: FlagGermany,
+            GermanyIdioma: "Alemão",
+            imgItaly: FlagItaly,
+            ItalyIdioma: "Italiano"
+
+        },
+        {
+            title: "Notícias",
+            news: "Você tem 3 novidades!",
+            button: "Ver Agora"
+        },
+        {
+            title: "Suporte",
+            iconPhone: Phone,
+            textPhone: "912 411 769",
+            iconLocation: MapPin,
+            textLocation: "Portugal, Lisboa",
+            iconEmail: Mail,
+            textEmail: "ramonpatrick0906@gmail.com"
+        }
+    ]
+
+
     return (
-        <div className="">
+        <div>
+            <div>
+
+            </div>
             <div>
                 <h1 className="text-2xl font-bold">Dashboard</h1>
                 <p className="mt-2 text-gray-300">Bem-vindo ao seu espaço de aprendizado no Spooken 🚀</p>
@@ -49,25 +87,46 @@ export default function DashboardPage() {
 
 
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
-                        <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow-lg">
-                            <h3 className="font-semibold">Em andamento</h3>
-                            <p className="text-sm text-gray-400 mt-2">2 lições ativas</p>
-                        </div>
+                        {options.map((option, idx) => (
+                            <div key={idx} className="p-4 rounded-lg bg-[#0b1417] border transform hover:-translate-y-1 transition border-gray-800 shadow-lg">
+                                <h2 className="font-bold">{option.title}</h2>
 
-                        <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow-lg">
-                            <h3 className="font-semibold">Próximos Idiomas</h3>
-                            <p className="text-sm text-gray-400 mt-2">Inglês Espanhol</p>
-                        </div>
+                                {option.text && <p className="text-sm text-gray-400">{option.text}</p>}
+                                {option.news && <p className='text-sm text-gray-400'>{option.news}</p>}
+                                {option.button && <Link href="/dashboard/news"><button className='w-full border border-green-600 p-2 bg-green-600 mt-4 shadow-lg rounded-lg'>{option.button}</button></Link>}
 
-                        <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow-lg">
-                            <h3 className="font-semibold">Notícias</h3>
-                            <p className="text-sm text-gray-400 mt-2">Nova lição disponível</p>
-                        </div>
+                                {option.imgGermany && (
+                                    <div className='flex items-center gap-2 border p-1 rounded-lg mt-2 bg-[#3e3e3e]'>
+                                        <Image src={option.imgGermany} alt="Bandeira da Alemanha" width={40} /> {option.GermanyIdioma && <p className="text-sm">{option.GermanyIdioma}</p>}
+                                    </div>
+                                )}
+                                {option.imgItaly && (
+                                    <div className='flex items-center gap-2 border p-1 mt-2 rounded-lg bg-[#3e3e3e]'>
+                                        <Image src={option.imgItaly} alt="Bandeira da Itália" width={40} /> {option.ItalyIdioma && <p className="text-sm">{option.ItalyIdioma}</p>}
+                                    </div>
+                                )}
 
-                        <div className="p-4 rounded-lg bg-[#0b1417] border border-gray-800 shadow-lg">
-                            <h3 className="font-semibold">Suporte</h3>
-                            <p className="text-sm text-gray-400 mt-2">Fale conosco via email ou chat</p>
-                        </div>
+
+                                {option.iconEmail && (
+                                    <div className='flex items-center gap-2 mt-2'>
+                                        <option.iconEmail size={16} /> {option.textEmail && <p className="text-sm text-gray-400">{option.textEmail}</p>}
+                                    </div>
+                                )}
+
+                                {option.iconLocation && (
+                                    <div className='flex items-center gap-2 mt-2'>
+                                        <option.iconLocation size={16} /> {option.textLocation && <p className='text-sm text-gray-400'>{option.textLocation}</p>}
+                                    </div>
+                                )}
+
+                                {option.iconPhone && (
+                                    <div className='flex items-center gap-2 mt-2'>
+                                        <option.iconPhone size={16} /> {option.textPhone && <p className='text-sm text-gray-400'>{option.textPhone}</p>}
+                                    </div>
+                                )}
+
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>

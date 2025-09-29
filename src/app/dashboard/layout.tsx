@@ -16,19 +16,19 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 <Image src={LogoLight} alt="Logo Spooken" className="w-[150px]" />
 
                 <nav className="flex flex-col gap-4 text-sm mt-8">
-                    <Link href="/dashboard" className="flex items-center gap-2 hover:text-white">
+                    <Link href="/dashboard" className="flex items-center gap-2 transform hover:-translate-y-1 transition hover:text-white">
                         <House size={18} /> Home
                     </Link>
-                    <Link href="/dashboard/courses" className="flex items-center gap-2 hover:text-white">
+                    <Link href="/dashboard/courses" className="flex items-center gap-2 transform hover:-translate-y-1 transition hover:text-white">
                         <GraduationCap size={18} /> Cursos
                     </Link>
-                    <Link href="/dashboard/news" className="flex items-center gap-2 hover:text-white">
+                    <Link href="/dashboard/news" className="flex items-center gap-2 transform hover:-translate-y-1 transition hover:text-white">
                         <Newspaper size={18} /> Notícias
                     </Link>
-                    <Link href="/dashboard/perfil" className="flex items-center gap-2 hover:text-white">
+                    <Link href="/dashboard/perfil" className="flex items-center gap-2 transform hover:-translate-y-1 transition hover:text-white">
                         <UsersRound size={18} /> Perfil
                     </Link>
-                    <Link href="/dashboard/settings" className="flex items-center gap-2 hover:text-white">
+                    <Link href="/dashboard/settings" className="flex items-center gap-2 transform hover:-translate-y-1 transition hover:text-white">
                         <Bolt size={18} /> Configurações
                     </Link>
                 </nav>

@@ -7,7 +7,6 @@ import Link from "next/link";
 import { House, GraduationCap, Newspaper, UsersRound, Bolt } from "lucide-react";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-    const [open, setOpen] = useState(false);
 
     return (
         <div className="flex min-h-screen bg-[#108bcd]">
@@ -20,13 +19,13 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <div>
                             <h2 className="mb-4">Menu</h2>
                         </div>
-                        <Link href="/dashboard" onClick={() => setOpen(false)} className="flex mb-4 items-center gap-2">
+                        <Link href="/dashboard" className="flex mb-4 items-center gap-2">
                             <House size={18} /> Home
                         </Link>
-                        <Link href="/dashboard/courses" onClick={() => setOpen(false)} className="flex mb-4 items-center gap-2">
+                        <Link href="/dashboard/courses" className="flex mb-4 items-center gap-2">
                             <GraduationCap size={18} /> Cursos
                         </Link>
-                        <Link href="/dashboard/news" onClick={() => setOpen(false)} className="flex items-center mb-4 gap-2">
+                        <Link href="/dashboard/news" className="flex items-center mb-4 gap-2">
                             <Newspaper size={18} /> Notícias
                         </Link>
                     </div>
@@ -34,10 +33,10 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                         <div>
                             <h2 className="mb-4">Suporte</h2>
                         </div>
-                        <Link href="/dashboard/perfil" onClick={() => setOpen(false)} className="flex mb-4 items-center gap-2">
+                        <Link href="/dashboard/perfil" className="flex mb-4 items-center gap-2">
                             <UsersRound size={18} /> Perfil
                         </Link>
-                        <Link href="/dashboard/settings" onClick={() => setOpen(false)} className="flex items-center mb-4 gap-2">
+                        <Link href="/dashboard/settings" className="flex items-center mb-4 gap-2">
                             <Bolt size={18} /> Configurações
                         </Link>
                     </div>
@@ -54,6 +53,23 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     {children}
                 </div>
 
+                <div className="flex md:hidden bg-[#108bcd] gap-16 text-[#fff] p-4 justify-center items-center fixed bottom-0 left-0 w-full z-50">
+                    <Link href="/dashboard" className="flex items-center ">
+                        <House size={32} />
+                    </Link>
+                    <Link href="/dashboard/courses" className="flex items-center ">
+                        <GraduationCap size={32} />
+                    </Link>
+                    <Link href="/dashboard/news" className="flex items-center ">
+                        <Newspaper size={32} />
+                    </Link>
+                    <Link href="/dashboard/perfil" className="flex items-center ">
+                        <UsersRound size={32} />
+                    </Link>
+                    <Link href="/dashboard/settings" className="flex items-center ">
+                        <Bolt size={32} />
+                    </Link>
+                </div>
             </main>
         </div >
     );

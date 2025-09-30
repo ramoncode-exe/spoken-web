@@ -15,7 +15,7 @@ export default function Header() {
                 <p>Aqui você pode aprender três idiomas gratuitamente! 🔥</p>
             </div>
 
-            <nav className="relative flex items-center justify-between p-3 border-b border-[#e5e7eb] max-w-6xl mx-auto px-4">
+            <nav className="relative flex items-center justify-around p-3 border-b border-[#e5e7eb] mx-auto">
                 <div className="flex items-center gap-4">
                     <Link href="/">
                         <Image src={Logo} alt="Logo Spooken" className="w-40 h-auto" />

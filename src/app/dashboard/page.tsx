@@ -1,6 +1,6 @@
 "use client"
 
-import { Bolt, Book, Clock, CheckCircle, Phone, MapPin, Mail, Flag } from 'lucide-react';
+import { Bolt, Book, Clock, CheckCircle, Phone, MapPin, Mail, Users, Search } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
@@ -40,13 +40,22 @@ export default function DashboardPage() {
 
 
     return (
-        <div>
-            <div>
-
-            </div>
-            <div>
-                <h1 className="text-2xl font-bold">Dashboard</h1>
-                <p className="mt-2 text-gray-300">Bem-vindo ao seu espaço de aprendizado no Spooken 🚀</p>
+        <div className="">
+            <div className='flex justify-between max-md:flex-wrap-reverse border-b border-[#c2c2c2] text-[#000]'>
+                <div className='max-md:mt-2'>
+                    <h1 className="text-2xl font-bold">Dashboard</h1>
+                    <p className="mt-2 mb-4">Bem-vindo ao seu espaço de aprendizado no Spooken 🚀</p>
+                </div>
+                <div className=''>
+                    <div className='flex items-center gap-4'>
+                        <search>
+                            <form className='border border-gray-700 rounded-4xl flex  p-1 bg-[#0f1720] items-center text-gray-200'>
+                                <Search size={18} /><input className='ml-2' name="fsrch" id="fsrch" placeholder="Procurar" />
+                            </form>
+                        </search>
+                        <Users className="bg-gray-700 text-white p-1 rounded-full" size={26} />
+                    </div>
+                </div>
             </div>
 
             <div className="grid grid-cols-1 lg:grid-cols-4 gap-6 mt-6">
@@ -96,12 +105,12 @@ export default function DashboardPage() {
                                 {option.button && <Link href="/dashboard/news"><button className='w-full border border-green-600 p-2 bg-green-600 mt-4 shadow-lg rounded-lg'>{option.button}</button></Link>}
 
                                 {option.imgGermany && (
-                                    <div className='flex items-center gap-2 border p-1 rounded-lg mt-2 bg-[#3e3e3e]'>
+                                    <div className='flex items-center gap-2 p-1 rounded-lg mt-2 bg-[#5d5d5d]'>
                                         <Image src={option.imgGermany} alt="Bandeira da Alemanha" width={40} /> {option.GermanyIdioma && <p className="text-sm">{option.GermanyIdioma}</p>}
                                     </div>
                                 )}
                                 {option.imgItaly && (
-                                    <div className='flex items-center gap-2 border p-1 mt-2 rounded-lg bg-[#3e3e3e]'>
+                                    <div className='flex items-center gap-2 p-1 mt-2 rounded-lg bg-[#5d5d5d]'>
                                         <Image src={option.imgItaly} alt="Bandeira da Itália" width={40} /> {option.ItalyIdioma && <p className="text-sm">{option.ItalyIdioma}</p>}
                                     </div>
                                 )}

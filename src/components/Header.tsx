@@ -18,7 +18,7 @@ export default function Header() {
             <nav className="relative flex items-center justify-around p-3 border-b border-[#e5e7eb] mx-auto">
                 <div className="flex items-center gap-4">
                     <Link href="/">
-                        <Image src={Logo} alt="Logo Spooken" className="w-40 h-auto" />
+                        <Image src={Logo} alt="Logo Spooken" className="w-48 h-auto" />
                     </Link>
                 </div>
 

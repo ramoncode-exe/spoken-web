@@ -8,22 +8,22 @@ export default function Benefits() {
     return (
         <main>
             <div className='bg-[#108bcd] flex p-4 gap-4 text-center justify-center items-center text-white mt-4 md: flex-wrap'>
-                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-52">
+                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-72">
                     <Brain size={28} />
                     <p className='font-bold text-sm'>SIMPLES E LEVE</p>
                     <p className='text-[12px]'>FÁCIL DE USAR EM QUALQUER DISPOSITIVO.</p>
                 </div>
-                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-52">
+                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-72">
                     <Handshake size={28} />
                     <p className='font-bold text-sm'>100% GRATUITO</p>
                     <p className='text-[12px]'>FEITO PRA QUEM NÃO PODE PAGAR.</p>
                 </div>
-                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-52">
+                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-72">
                     <Cloud size={28} />
                     <p className='font-bold text-sm'>NO SEU RITMO</p>
                     <p className='text-[12px]'>PRATIQUE SUA FALA, NÃO SÓ LEITURA.</p>
                 </div>
-                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-52">
+                <div className="bg-[#0077B6] shadow-lg transform hover:-translate-y-1 transition rounded-lg p-5 flex flex-col items-center text-center gap-2 w-72">
                     <Rocket size={28} />
                     <p className='font-bold text-sm'>FALE DE VERDADE</p>
                     <p className='text-[12px]'>ESTUDE QUANDO E COMO QUISER.</p>

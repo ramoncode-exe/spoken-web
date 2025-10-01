@@ -1,76 +1,74 @@
 "use client"
 
-import { useState } from "react";
 import LogoLight from "../../assets/logo-light.svg";
 import Image from "next/image";
 import Link from "next/link";
-import { House, GraduationCap, Newspaper, UsersRound, Bolt } from "lucide-react";
+import { House, GraduationCap, Newspaper, UsersRound, Bolt, Users, Search } from "lucide-react";
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
-
     return (
-        <div className="flex min-h-screen bg-[#108bcd]">
-            {/* Sidebar desktop */}
-            <aside className="hidden md:flex text-[#fff] w-[220px] p-6 flex-col">
-                <Image src={LogoLight} alt="Logo Spooken" className="w-[150px]" />
+        <div className="min-h-screen bg-[#212529] font-poppins flex flex-col">
 
-                <nav className="flex flex-col gap-4 text-sm mt-8">
-                    <div className="border-b border-[#c2c2c2]">
-                        <div>
+
+            <header className="w-full h-[60px] bg-[#212529] border-b border-[#343a40] flex items-center justify-around px-6 fixed top-0 left-0 z-50">
+                <div>
+                    <Image src={LogoLight} alt="Logo Spooken" className="w-[150px]" />
+                </div>
+                <div>
+                    <search className='w-[400px] max-md:w-[200px]'>
+                        <form className='rounded-xl flex shadow-lg p-2 bg-[#343a40] text-[#8e8e8e]  items-center'>
+                            <Search size={18} /><input className='ml-2 outline-none' name="fsrch" id="fsrch" placeholder="Pesquisa algo..." />
+                        </form>
+                    </search>
+                </div>
+                <div>
+                    <Users className="bg-[#343a40] text-[#8e8e8e] p-1 rounded-full" size={26} />
+                </div>
+            </header>
+
+            <div className="flex flex-1 pt-[60px]">
+
+                <aside className="hidden md:flex text-[#8e8e8e] border-r border-[#343a40] w-[220px] p-6 flex-col">
+                    <nav className="flex flex-col gap-4 text-[16px] mt-8">
+                        <div className="border-b border-[#343a40] pb-4">
                             <h2 className="mb-4">Menu</h2>
+                            <Link href="/dashboard" className="flex mb-4 items-center gap-2">
+                                <House size={18} /> Home
+                            </Link>
+                            <Link href="/dashboard/courses" className="flex mb-4 items-center gap-2">
+                                <GraduationCap size={18} /> Cursos
+                            </Link>
+                            <Link href="/dashboard/news" className="flex items-center mb-4 gap-2">
+                                <Newspaper size={18} /> Atualizações
+                            </Link>
                         </div>
-                        <Link href="/dashboard" className="flex mb-4 items-center gap-2">
-                            <House size={18} /> Home
-                        </Link>
-                        <Link href="/dashboard/courses" className="flex mb-4 items-center gap-2">
-                            <GraduationCap size={18} /> Cursos
-                        </Link>
-                        <Link href="/dashboard/news" className="flex items-center mb-4 gap-2">
-                            <Newspaper size={18} /> Notícias
-                        </Link>
-                    </div>
-                    <div className="border-b border-[#c2c2c2]">
-                        <div>
-                            <h2 className="mb-4">Suporte</h2>
+
+                        <div className="border-b border-[#343a40] pb-4">
+                            <h2 className="mb-4">Minha Conta</h2>
+                            <Link href="/dashboard/perfil" className="flex mb-4 items-center gap-2">
+                                <UsersRound size={18} /> Perfil
+                            </Link>
+                            <Link href="/dashboard/settings" className="flex items-center mb-4 gap-2">
+                                <Bolt size={18} /> Configurações
+                            </Link>
                         </div>
-                        <Link href="/dashboard/perfil" className="flex mb-4 items-center gap-2">
-                            <UsersRound size={18} /> Perfil
-                        </Link>
-                        <Link href="/dashboard/settings" className="flex items-center mb-4 gap-2">
-                            <Bolt size={18} /> Configurações
-                        </Link>
-                    </div>
+                    </nav>
+                </aside>
 
-                </nav>
-            </aside>
-
-            <main className="flex-1 bg-[#f8f8f8]">
-                <div className="md:hidden flex bg-[#108bcd]">
-                    <Image src={LogoLight} alt="Logo Spooken" className="w-[180px] mx-auto" />
-                </div>
-
-                <div className="p-6">
+                {/* CONTEÚDO PRINCIPAL */}
+                <main className="flex-1 bg-[#212529] p-6">
                     {children}
-                </div>
+                </main>
+            </div>
 
-                <div className="flex md:hidden bg-[#108bcd] gap-16 text-[#fff] p-4 justify-center items-center fixed bottom-0 left-0 w-full z-50">
-                    <Link href="/dashboard" className="flex items-center ">
-                        <House size={32} />
-                    </Link>
-                    <Link href="/dashboard/courses" className="flex items-center ">
-                        <GraduationCap size={32} />
-                    </Link>
-                    <Link href="/dashboard/news" className="flex items-center ">
-                        <Newspaper size={32} />
-                    </Link>
-                    <Link href="/dashboard/perfil" className="flex items-center ">
-                        <UsersRound size={32} />
-                    </Link>
-                    <Link href="/dashboard/settings" className="flex items-center ">
-                        <Bolt size={32} />
-                    </Link>
-                </div>
-            </main>
-        </div >
+            {/* NAVBAR MOBILE FIXA NO RODAPÉ */}
+            <div className="flex md:hidden bg-[#212529] gap-12 text-[#fff] p-4 justify-center items-center fixed bottom-0 left-0 w-full z-50 border-t border-[#343a40]">
+                <Link href="/dashboard"><House size={28} /></Link>
+                <Link href="/dashboard/courses"><GraduationCap size={28} /></Link>
+                <Link href="/dashboard/news"><Newspaper size={28} /></Link>
+                <Link href="/dashboard/perfil"><UsersRound size={28} /></Link>
+                <Link href="/dashboard/settings"><Bolt size={28} /></Link>
+            </div>
+        </div>
     );
 }

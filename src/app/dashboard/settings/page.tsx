@@ -8,7 +8,7 @@ export default function SettingsDashboardPage() {
 
     return (
         <div className="p-6">
-            <div className="max-w-4xl mx-auto bg-[#CAF0F8]  rounded-lg shadow p-6 text-[#000]">
+            <div className="max-w-4xl mx-auto bg-[#343a40]  rounded-lg shadow-md p-6 text-[#d7d7d7]">
                 <h1 className="text-2xl font-semibold mb-4">Configurações da Conta</h1>
 
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

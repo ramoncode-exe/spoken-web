@@ -32,9 +32,9 @@ export default function NewsDashboardPage() {
     ]
 
     return (
-        <div className="py-8 bg-[url('/bg-dash.svg')] bg-no-repeat bg-contain bg-start">
+        <div className="py-8">
             <div className="max-w-4xl mx-auto px-4">
-                <header className="text-center mb-6 text-[#000]">
+                <header className="text-start mb-6 text-[#d7d7d7]">
                     <h1 className="text-2xl md:text-3xl font-bold mb-2">Notícias</h1>
                     <p className="text-sm md:text-base">
                         Todas as notícias, novidades e atualizações do Spooken você pode
@@ -46,22 +46,22 @@ export default function NewsDashboardPage() {
                     {posts.map((post, idx) => (
                         <article
                             key={idx}
-                            className="bg-[#CAF0F8] shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row gap-4 p-4"
+                            className="bg-[#343a40] shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row gap-4 "
                         >
                             <div className="flex-shrink-0 w-full md:w-48">
                                 <Image
                                     src={post.img}
                                     alt={post.alt}
-                                    className="rounded-lg object-cover w-full h-40 md:h-44"
+                                    className="object-cover w-full h-full md:h-44"
                                 />
                             </div>
 
-                            <div className="flex-1">
-                                <h2 className="text-lg text-[#000] md:text-xl font-extrabold mb-2">
+                            <div className="flex-1 p-4">
+                                <h2 className="text-lg text-[#d7d7d7] md:text-xl font-extrabold mb-2">
                                     {post.title}
                                 </h2>
-                                <p className="text-sm md:text-[15px] text-[#161616]">{post.body}</p>
-                                <span className="text-[12px] text-[#202020] mt-4">{post.data}</span>
+                                <p className="text-sm md:text-[15px] text-[#bebebe]">{post.body}</p>
+                                <span className="text-[12px] text-[#ababab] mt-4">{post.data}</span>
                             </div>
                         </article>
                     ))}

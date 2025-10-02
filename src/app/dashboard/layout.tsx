@@ -60,15 +60,6 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     {children}
                 </main>
             </div>
-
-            {/* NAVBAR MOBILE FIXA NO RODAPÉ */}
-            <div className="flex md:hidden bg-[#212529] gap-12 text-[#fff] p-4 justify-center items-center fixed bottom-0 left-0 w-full z-50 border-t border-[#343a40]">
-                <Link href="/dashboard"><House size={28} /></Link>
-                <Link href="/dashboard/courses"><GraduationCap size={28} /></Link>
-                <Link href="/dashboard/news"><Newspaper size={28} /></Link>
-                <Link href="/dashboard/perfil"><UsersRound size={28} /></Link>
-                <Link href="/dashboard/settings"><Bolt size={28} /></Link>
-            </div>
         </div>
     );
 }

@@ -46,7 +46,7 @@ export default function NewsDashboardPage() {
                     {posts.map((post, idx) => (
                         <article
                             key={idx}
-                            className="bg-[#343a40] shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row gap-4 "
+                            className="bg-[#343a40] shadow-lg rounded-lg overflow-hidden border-r-4 border-[#b70994] flex flex-col md:flex-row gap-4 "
                         >
                             <div className="flex-shrink-0 w-full md:w-48">
                                 <Image

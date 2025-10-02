@@ -1,10 +1,13 @@
 "use client"
 
-import { Bolt, Book, Clock, CheckCircle, Mails, MapPinHouse, Phone } from 'lucide-react';
+import { Bolt, Book, Clock, CheckCircle, Mails, MapPinHouse, Phone, Album } from 'lucide-react';
 import React from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import ImgNewsHome from "../../assets/post-who.png"
+import FlagEnglish from "../../assets/english.svg"
+import FlagSpanish from "../../assets/spanish.svg"
+import FlagFrench from "../../assets/french.svg"
 
 export default function DashboardPage() {
 
@@ -55,29 +58,62 @@ export default function DashboardPage() {
 
                     <div className='mt-8 text-[#bebebe]'>
                         <div>
-                            <h1 className="text-2xl font-bold">Conteúdos Legais</h1>
+                            <h1 className="text-lg font-bold">Conteúdos Legais</h1>
                         </div>
                         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-6">
                             <div className='bg-[#343a40] p-2 shadow-lg rounded-sm transform hover:-translate-y-1 transition'>
+                                <div className='flex items-center justify-between mb-10'>
+                                    <div>
+                                        <Image src={FlagEnglish} alt="flag english" className='w-12' />
+                                    </div>
+                                    <div>
+                                        <span>10 Min.</span>
+                                    </div>
+                                </div>
+
                                 <h2 className='text-sm border-b border-[#4f5152] p-2'>Comida</h2>
-                                <span className='text-[#8e8e8e] text-[10px]'></span>
+                                <span className='text-[12px] bg-[#008000]/30 text-[#00c127] p-1 rounded-sm font-bold flex gap-1 items-center mt-2 w-26'><Album size={18} />CONTEÚDO</span>
                             </div>
                             <div className='bg-[#343a40] p-2 shadow-lg rounded-sm transform hover:-translate-y-1 transition'>
+                                <div className='flex items-center justify-between mb-10'>
+                                    <div>
+                                        <Image src={FlagFrench} alt="flag french" className='w-12' />
+                                    </div>
+                                    <div>
+                                        <span>7 Min.</span>
+                                    </div>
+                                </div>
                                 <h2 className='text-sm border-b border-[#4f5152] p-2'>Conversando</h2>
-                                <span className='text-[#8e8e8e] text-[10px]'></span>
+                                <span className='text-[12px] bg-[#008000]/30 text-[#00c127] p-1 rounded-sm font-bold flex gap-1 items-center mt-2 w-26'><Album size={18} />CONTEÚDO</span>
                             </div>
                             <div className='bg-[#343a40] p-2 shadow-lg rounded-sm transform hover:-translate-y-1 transition'>
+                                <div className='flex items-center justify-between mb-10'>
+                                    <div>
+                                        <Image src={FlagEnglish} alt="flag english" className='w-12' />
+                                    </div>
+                                    <div>
+                                        <span>8 Min.</span>
+                                    </div>
+                                </div>
                                 <h2 className='text-sm border-b border-[#4f5152] p-2'>Viagens</h2>
-                                <span className='text-[#8e8e8e] text-[10px]'></span>
+                                <span className='text-[12px] bg-[#008000]/30 text-[#00c127] p-1 rounded-sm font-bold flex gap-1 items-center mt-2 w-26'><Album size={18} />CONTEÚDO</span>
                             </div>
                             <div className='bg-[#343a40] p-2 shadow-lg rounded-sm transform hover:-translate-y-1 transition'>
+                                <div className='flex items-center justify-between mb-10'>
+                                    <div>
+                                        <Image src={FlagSpanish} alt="flag spanish" className='w-12' />
+                                    </div>
+                                    <div>
+                                        <span>12 Min.</span>
+                                    </div>
+                                </div>
                                 <h2 className='text-sm border-b border-[#4f5152] p-2'>Compras</h2>
-                                <span className='text-[#8e8e8e] text-[10px]'></span>
+                                <span className='text-[12px] bg-[#008000]/30 text-[#00c127] p-1 rounded-sm font-bold flex gap-1 mt-2 items-center w-26'><Album size={18} />CONTEÚDO</span>
                             </div>
                         </div>
                     </div>
                     <div className='mt-8 text-[#bebebe] grid grid-cols-3 max-md:grid-cols-2 grid-rows-1 gap-4'>
-                        <div className='col-span-2'>
+                        <div className='col-span-2 transform hover:-translate-y-1 transition'>
                             <div>
                                 <h1 className="text-lg font-bold">Atualizações Recentes</h1>
                             </div>
@@ -95,13 +131,13 @@ export default function DashboardPage() {
                                 </div>
                             </div>
                         </div>
-                        <div className='col-span-1 max-md:col-span-2'>
+                        <div className='col-span-1 max-md:col-span-2 transform hover:-translate-y-1 transition'>
                             <div>
                                 <h1 className="text-lg font-bold">Suporte</h1>
                             </div>
                             <div className="bg-[#343a40] border-r-4 border-[#00c127] shadow-lg mt-4 rounded-sm p-4">
                                 <h2 className='text-sm font-bold mb-4'>Tem alguma dúvida?</h2>
-                                <div className='mt-2 text-[#bebebe] border-b border-[#4f5152]'>
+                                <div className='mt-2 text-[#bebebe] border-b border-[#4f5152] h-38 max-md:h-auto'>
                                     <div className='flex gap-2 text-sm mb-4'>
                                         <Mails />
                                         <span>ramonpatrick0906@gmail.com</span>

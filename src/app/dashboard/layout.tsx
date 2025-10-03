@@ -76,7 +76,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 {/* Menu Responsivo - Mobile  */}
 
                 {isOpen && (
-                    <div className="absolute top-14 left-0 w-full bg-[#212529] flex flex-col items-start gap-4 p-6 lg:hidden shadow-lg z-10">
+                    <div className="fixed top-14 left-0 w-full bg-[#212529] flex flex-col items-start gap-4 p-6 lg:hidden shadow-lg z-10">
                         <div className="">
                             <h2 className="mb-4 font-bold text-[#d7d7d7]">Menu</h2>
                             <Link href="/dashboard" className="flex mb-4 text-[#d7d7d7] items-center gap-2 hover:text-[#9e9e9e]">

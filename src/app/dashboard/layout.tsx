@@ -32,9 +32,9 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
 
             <div className="flex flex-1 pt-[60px]">
 
-                <aside className="max-md:hidden text-[#8e8e8e] border-r border-[#343a40] w-[220px] p-6 flex-col">
+                <aside className="max-md:hidden fixed text-[#8e8e8e] border-r border-[#343a40] w-[220px] p-6 flex-col">
                     <nav className="flex flex-col gap-4 text-[16px] mt-2">
-                        <div className="border-b border-[#343a40] pb-4">
+                        <div className="border-b  border-[#343a40] pb-4">
                             <h2 className="mb-4">Menu</h2>
                             <Link href="/dashboard" className="flex mb-4 items-center gap-2 hover:text-[#9e9e9e]">
                                 <House size={18} /> Home
@@ -60,7 +60,7 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </aside>
 
                 {/* CONTEÚDO PRINCIPAL */}
-                <main className="flex-1 bg-[#212529] p-6">
+                <main className="flex-1 ml-[220px] max-md:ml-0 border-l border-[#343a40] p-6">
                     {children}
                 </main>
 

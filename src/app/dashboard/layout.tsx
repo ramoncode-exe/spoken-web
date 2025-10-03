@@ -1,6 +1,7 @@
 "use client"
 
 import LogoLight from "../../assets/logo-light.svg";
+import Menu from "../../assets/menu-spooken.svg"
 import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
@@ -8,6 +9,11 @@ import { House, GraduationCap, Newspaper, UsersRound, Bolt, Users, Search } from
 
 export default function DashboardLayout({ children }: { children: React.ReactNode }) {
 
+    const [isOpen, setIsOpen] = useState(false);
+
+    const toggleMenu = () => {
+        setIsOpen(!isOpen);
+    }
 
 
     return (
@@ -19,13 +25,16 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                     <Image src={LogoLight} alt="Logo Spooken" className="w-[150px]" />
                 </div>
                 <div>
-                    <search className='w-[400px] max-md:w-[200px] max-md:hidden'>
+                    <div className='w-[400px] max-md:w-[200px] max-md:hidden'>
                         <form className='rounded-xl flex shadow-lg p-2 bg-[#343a40] text-[#8e8e8e]  items-center'>
                             <Search size={18} /><input className='ml-2 outline-none' name="fsrch" id="fsrch" placeholder="Pesquisa algo..." />
                         </form>
-                    </search>
+                    </div>
                 </div>
-                <div>
+                <div className="md:hidden">
+                    <Image src={Menu} alt="responsive menu - spooken" className="w-[30px]" onClick={toggleMenu} />
+                </div>
+                <div className="max-md:hidden">
                     <Users className="bg-[#343a40] text-[#8e8e8e] p-1 rounded-full" size={26} />
                 </div>
             </header>
@@ -65,6 +74,33 @@ export default function DashboardLayout({ children }: { children: React.ReactNod
                 </main>
 
                 {/* Menu Responsivo - Mobile  */}
+
+                {isOpen && (
+                    <div className="absolute top-14 left-0 w-full bg-[#212529] flex flex-col items-start gap-4 p-6 lg:hidden shadow-lg z-10">
+                        <div className="">
+                            <h2 className="mb-4 font-bold text-[#d7d7d7]">Menu</h2>
+                            <Link href="/dashboard" className="flex mb-4 text-[#d7d7d7] items-center gap-2 hover:text-[#9e9e9e]">
+                                <House size={18} /> Home
+                            </Link>
+                            <Link href="/dashboard/courses" className="flex mb-4 text-[#d7d7d7] items-center gap-2 hover:text-[#9e9e9e]">
+                                <GraduationCap size={18} /> Cursos
+                            </Link>
+                            <Link href="/dashboard/news" className="flex text-[#d7d7d7] items-center mb-4 gap-2 hover:text-[#9e9e9e]">
+                                <Newspaper size={18} /> Atualizações
+                            </Link>
+                        </div>
+
+                        <div className="">
+                            <h2 className="mb-4 font-bold text-[#d7d7d7]">Minha Conta</h2>
+                            <Link href="/dashboard/perfil" className="flex mb-4 text-[#d7d7d7] items-center gap-2 hover:text-[#9e9e9e]">
+                                <UsersRound size={18} /> Perfil
+                            </Link>
+                            <Link href="/dashboard/settings" className="flex text-[#d7d7d7] items-center mb-4 gap-2 hover:text-[#9e9e9e]">
+                                <Bolt size={18} /> Configurações
+                            </Link>
+                        </div>
+                    </div>
+                )}
 
 
             </div>
